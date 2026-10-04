@@ -76,3 +76,28 @@ To use the real data, replace `model/data.csv` with the collected file
 
 \- Metric: RMSE (ms). Ridge alpha is chosen on validation RMSE.
 
+## Real Dataset Collection
+
+The real dataset was collected from the open-source Bazel repository by evaluating historical Bazel commits.
+
+For each commit:
+
+1. The changed files were identified from the commit.
+2. Supported files were classified by their Bazel path prefix and file type.
+3. The most common changed prefix and file type were selected as the input features.
+4. The Bazel target `//src:bazel-dev` was built.
+5. Bazel Build Event Protocol (BEP) JSON was generated for the build.
+6. The build CPU time was extracted from `buildMetrics -> timingMetrics -> cpuTimeInMs`.
+7. One row was added to the dataset with the columns:
+   `prefix, file_type, cpu_time_ms`.
+
+The collected dataset contains **100 real Bazel build records**.
+
+The dataset was validated to ensure:
+- The required columns are present.
+- No values are missing.
+- CPU times are positive.
+- Prefixes and file types use the allowed project categories.
+
+The resulting dataset is stored in `model/realdataset.csv`.
+
