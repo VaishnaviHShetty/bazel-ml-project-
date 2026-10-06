@@ -7,7 +7,7 @@ import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 
-CSV_PATH = "model/data.csv"   # change this when the real data arrives
+CSV_PATH = "model/combined_dataset.csv"
 
 
 def rmse(y_true, y_pred):
