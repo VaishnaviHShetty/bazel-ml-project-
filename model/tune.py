@@ -8,7 +8,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error
 
-CSV_PATH = "model/data.csv"   # change this when the real data arrives
+CSV_PATH = "model/combined_dataset.csv"
 ALPHAS = [0.01, 0.1, 1, 3, 10, 30]
 
 
