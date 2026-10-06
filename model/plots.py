@@ -60,3 +60,14 @@ plt.close()
 print("Saved plots to model/plots/")
 for n, v in zip(names, vals):
     print(n.replace("\n", " "), round(v, 1))
+    # Plot 3: CPU time distribution for combined dataset
+plt.figure(figsize=(7, 4))
+plt.hist(df["cpu_time_ms"], bins=30)
+plt.xlabel("CPU time (ms)")
+plt.ylabel("Frequency")
+plt.title("CPU Time Distribution - Combined Dataset")
+plt.tight_layout()
+plt.savefig("model/plots/combined_dataset_distribution.png", dpi=150)
+plt.close()
+
+print("Saved combined dataset plot.")
