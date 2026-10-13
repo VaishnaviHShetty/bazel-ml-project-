@@ -42,4 +42,7 @@ if st.button("Predict CPU time"):
     col1.metric("Ridge (no cross)", f"{p_no:,.0f} ms")
     col2.metric("Ridge (with cross)", f"{p_cr:,.0f} ms")
     col3.metric("Random Forest", f"{p_rf:,.0f} ms")
-    st.caption("Predictions come from Ridge regression models trained on commit data.")
+    st.caption(
+    "Predictions come from Ridge regression and Random Forest models "
+    "trained on commit data."
+    )
