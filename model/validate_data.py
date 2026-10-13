@@ -1,6 +1,6 @@
 import pandas as pd
 
-FILE = "realdataset.csv"
+FILE = "model/combined_dataset.csv"
 
 ALLOWED_PREFIXES = {
     "bazelci/",
