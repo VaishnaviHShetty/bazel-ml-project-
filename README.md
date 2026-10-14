@@ -12,8 +12,6 @@ Install the dependencies from the repository root:
 pip install -r requirements.txt
 ```
 
-If `requirements.txt` is located in the repository root, the command above installs the required dependencies.
-
 ## Files
 
 | File | Purpose |
